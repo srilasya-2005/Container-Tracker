@@ -1,0 +1,128 @@
+{
+  "identity": {
+    "persona": "E1",
+    "style": "Maritime Industrial",
+    "principles": [
+      "Fusion over Imitation: Mix Industrial Precision with Swiss Clarity",
+      "Emotion First: Confidence, Robustness, Efficiency",
+      "Content is King: Data density without clutter",
+      "Zoom in: Focus on the container ID and status",
+      "Contrast: High contrast for readability in bright/outdoor environments"
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Barlow Condensed, sans-serif",
+      "body": "Public Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "weights": {
+      "heading": "700",
+      "body": "400",
+      "bold": "600"
+    },
+    "usage": {
+      "h1": "text-4xl font-bold tracking-tight font-heading uppercase text-slate-900",
+      "h2": "text-2xl font-semibold tracking-tight font-heading text-slate-800",
+      "h3": "text-xl font-medium font-heading text-slate-700",
+      "body": "text-base font-normal text-slate-600 leading-relaxed",
+      "label": "text-xs font-bold uppercase tracking-wider text-slate-500 font-mono",
+      "data": "font-mono text-sm text-slate-900"
+    },
+    "import_url": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#FF4F00",
+        "foreground": "#FFFFFF",
+        "hover": "#CC3F00",
+        "description": "International Orange - Safety & Action"
+      },
+      "secondary": {
+        "DEFAULT": "#0F172A",
+        "foreground": "#F8FAFC",
+        "description": "Deep Slate - Maritime Authority"
+      },
+      "accent": {
+        "DEFAULT": "#F59E0B",
+        "foreground": "#0F172A",
+        "description": "Signal Yellow - Warnings/Attention"
+      },
+      "background": "#F1F5F9",
+      "surface": "#FFFFFF",
+      "border": "#E2E8F0",
+      "success": "#10B981",
+      "error": "#EF4444",
+      "warning": "#F59E0B"
+    },
+    "status_colors": {
+      "Available": "bg-emerald-100 text-emerald-700 border-emerald-200",
+      "Reserved": "bg-amber-100 text-amber-700 border-amber-200",
+      "Sold": "bg-slate-100 text-slate-600 border-slate-200 line-through decoration-slate-400"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-12",
+      "section_gap": "gap-8",
+      "item_gap": "gap-4"
+    },
+    "grid": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "form": "grid grid-cols-1 md:grid-cols-2 gap-6"
+    },
+    "radius": "rounded-sm",
+    "shadows": {
+      "card": "shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]",
+      "hover": "shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)]"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#FF4F00] hover:bg-[#CC3F00] text-white font-bold uppercase tracking-wide rounded-sm shadow-sm transition-all active:scale-95",
+      "secondary": "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-medium rounded-sm shadow-sm",
+      "ghost": "hover:bg-slate-100 text-slate-600 hover:text-slate-900"
+    },
+    "cards": {
+      "base": "bg-white border border-slate-200 rounded-sm shadow-sm p-6",
+      "kpi": "relative overflow-hidden border-l-4 border-l-[#FF4F00]"
+    },
+    "inputs": {
+      "base": "flex h-10 w-full rounded-sm border border-slate-300 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4F00] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    },
+    "tables": {
+      "wrapper": "rounded-sm border border-slate-200 overflow-hidden",
+      "header": "bg-slate-50 text-slate-500 font-medium uppercase text-xs tracking-wider border-b border-slate-200",
+      "row": "hover:bg-slate-50/50 transition-colors border-b border-slate-100 last:border-0"
+    }
+  },
+  "assets": {
+    "icons": "lucide-react",
+    "images": {
+      "login_bg": "https://images.unsplash.com/photo-1770944182378-00e7e02ca1f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxzaGlwcGluZyUyMGNvbnRhaW5lciUyMHlhcmQlMjBpbmR1c3RyaWFsfGVufDB8fHx8MTc3MTkxNzYxMHww&ixlib=rb-4.1.0&q=85",
+      "dashboard_empty": "https://images.unsplash.com/photo-1759272548449-7b689a81c8fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwxfHxsb2dpc3RpY3MlMjB3b3JrZXIlMjB0YWJsZXR8ZW58MHx8fHwxNzcxOTE3NjExfDA&ixlib=rb-4.1.0&q=85",
+      "container_placeholder": "https://images.unsplash.com/photo-1759272548470-d0686d071036?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHw0fHxzaGlwcGluZyUyMGNvbnRhaW5lciUyMHlhcmQlMjBpbmR1c3RyaWFsfGVufDB8fHx8MTc3MTkxNzYxMHww&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "instructions_to_main_agent": [
+    "INSTALL FONTS: Add the Google Fonts import link to the <head> of index.html immediately.",
+    "UPDATE TAILWIND: Update tailwind.config.js to include the new font families (heading, body, mono) and the custom color palette.",
+    "LAYOUT STRUCTURE: Create a Layout component with a collapsible sidebar (Slate Blue bg) and a main content area (Light Grey bg).",
+    "LOGIN PAGE: Use the 'login_bg' image as a full-screen background with a glassmorphism card for the login form.",
+    "DASHBOARD: Implement the KPI cards using the 'kpi' card style. Use Recharts for any charts, styled with the primary orange color.",
+    "TABLES: Build a reusable DataTable component that supports sorting and filtering. Use the 'technical' table styles defined above.",
+    "FORMS: Use React Hook Form + Zod for validation. Style inputs with the 'sharp' rounded-sm look.",
+    "NOTIFICATIONS: Use 'sonner' for toast notifications (success/error actions).",
+    "TESTING: Add data-testid attributes to all interactive elements (buttons, inputs, links) as requested."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use generic 'blue' for primary actions. Use the defined #FF4F00.",
+    "Avoid rounded-xl or rounded-2xl. Stick to rounded-sm (2px-4px) for that industrial feel.",
+    "Use 'Barlow Condensed' for all headings (h1-h3) and 'Public Sans' for body text.",
+    "Ensure high contrast for text. No light grey text on white backgrounds.",
+    "Add micro-interactions: hover states on rows, active states on buttons.",
+    "Do not use 'Inter' font.",
+    "Do not use gradients for backgrounds; use solid colors or subtle noise textures if needed."
+  ]
+}

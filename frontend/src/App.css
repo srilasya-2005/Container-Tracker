@@ -1,0 +1,36 @@
+/* Maritime Industrial Theme */
+.App {
+  min-height: 100vh;
+}
+
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider border rounded-full font-mono;
+}
+
+.status-available {
+  @apply bg-emerald-100 text-emerald-700 border-emerald-200;
+}
+
+.status-reserved {
+  @apply bg-amber-100 text-amber-700 border-amber-200;
+}
+
+.status-sold {
+  @apply bg-slate-100 text-slate-600 border-slate-200;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary-hover text-white font-semibold uppercase tracking-wide rounded-lg shadow-sm transition-all active:scale-95 px-4 py-2;
+}
+
+.btn-secondary {
+  @apply bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold rounded-lg shadow-sm px-4 py-2;
+}
+
+.card {
+  @apply bg-white border border-slate-200 rounded-xl shadow-sm;
+}
+
+.input-field {
+  @apply flex h-11 w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:border-orange-500 disabled:cursor-not-allowed disabled:opacity-50;
+}

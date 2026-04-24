@@ -1,0 +1,55 @@
+# Dependencies (Railway installs fresh)
+node_modules/
+**/node_modules/
+
+# Build output
+build/
+dist/
+**/build/
+**/dist/
+
+# Version control
+.git/
+.gitignore
+.gitconfig
+
+# Editor / IDE
+.vscode/
+.idea/
+.emergent/
+
+# Python tooling
+__pycache__/
+*.pyc
+venv/
+.venv/
+backend_test.py
+
+# Test & docs
+tests/
+test_reports/
+test_result.md
+design_guidelines.json
+README.md
+memory/
+
+# Local env files (Railway uses Variables)
+.env
+.env.*
+*.env
+*.env.*
+
+# Large artifacts
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Logs / OS cruft
+*.log
+.DS_Store
+
+# Lockfile-adjacent caches
+.yarn/cache/
+.yarn/install-state.gz
