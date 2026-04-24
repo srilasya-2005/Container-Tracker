@@ -24,9 +24,9 @@ const SMTP_PORT = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
 const SMTP_SECURE = process.env.SMTP_SECURE === 'true';
-const SMTP_FROM = process.env.SMTP_FROM || 'info@lmh.ltd';
-const APP_URL = process.env.APP_URL || 'https://dashboard.lmh.ltd/';
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'info@lmh.ltd';
+const SMTP_FROM = process.env.SMTP_FROM;
+const APP_URL = process.env.APP_URL;
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL;
 const LOGO_PATH = path.join(__dirname, '..', 'assets', 'lmh.png');
 const LOGO_URL = process.env.LOGO_URL || 'https://api.lmh.ltd/assets/lmh.png';
 const logoExists = fs.existsSync(LOGO_PATH);
