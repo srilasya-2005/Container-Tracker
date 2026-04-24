@@ -13,8 +13,17 @@ const app = express();
 app.set('trust proxy', 1);
 app.use(helmet({ contentSecurityPolicy: false, crossOriginResourcePolicy: false }));
 app.use(compression());
+const allowedOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['http://localhost:3000'];
+
 app.use(cors({
-  origin: '*',
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf('*') !== -1 || allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    return callback(null, true); // Fallback to allow during debug, but we'll return the origin to support credentials
+  },
   credentials: true
 }));
 app.use(express.json({ limit: '1mb' }));
@@ -83,6 +92,20 @@ initializeCronJobs();
 
 app.get('/api', (req, res) => {
   res.json({ message: 'Container Trade Tracker API' });
+});
+
+app.get('/api/health', async (req, res) => {
+  try {
+    const userCount = await mongoose.model('User').countDocuments();
+    res.json({
+      status: 'ok',
+      database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+      users: userCount,
+      environment: process.env.NODE_ENV || 'development'
+    });
+  } catch (error) {
+    res.status(500).json({ status: 'error', message: error.message });
+  }
 });
 
 const errorHandler = require('./middleware/errorHandler');
