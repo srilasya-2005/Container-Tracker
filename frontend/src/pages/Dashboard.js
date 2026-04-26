@@ -233,16 +233,16 @@ const Dashboard = () => {
               <p className="text-xs text-slate-400 mt-0.5">Sales payment breakdown</p>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex flex-col gap-6 h-full">
             {/* Donut */}
-            <div className="shrink-0">
+            <div className="w-full">
               {sales.paymentBreakdown?.length > 0 ? (
-                <ResponsiveContainer width={180} height={180}>
+                <ResponsiveContainer width="100%" height={200}>
                   <PieChart>
                     <Pie
                       data={sales.paymentBreakdown}
                       cx="50%" cy="50%"
-                      innerRadius={52} outerRadius={80}
+                      innerRadius={55} outerRadius={82}
                       paddingAngle={3} dataKey="value"
                       startAngle={90} endAngle={-270}
                     >
@@ -253,12 +253,12 @@ const Dashboard = () => {
                   </PieChart>
                 </ResponsiveContainer>
               ) : (
-                <div className="w-[180px] h-[180px] flex items-center justify-center text-slate-300 text-sm">No data</div>
+                <div className="h-[130px] flex items-center justify-center text-slate-300 text-sm">No data</div>
               )}
             </div>
 
             {/* Summary rows */}
-            <div className="flex-1 w-full space-y-3">
+            <div className="w-full space-y-3">
               <div className="flex items-center justify-between py-2.5 border-b border-slate-100">
                 <span className="text-xs font-medium text-slate-500">Total Received</span>
                 <span className="text-sm font-bold text-emerald-600">{formatAED(sales.totalReceived)}</span>
@@ -286,12 +286,12 @@ const Dashboard = () => {
         </Card>
 
         {/* Container Distribution */}
-        <Card className="p-6">
-          <div className="mb-4">
+        <Card className="p-6 flex flex-col h-full">
+          <div className="mb-4 shrink-0">
             <h2 className="text-base font-bold text-slate-800">Container Distribution</h2>
             <p className="text-xs text-slate-400 mt-0.5">By type and size</p>
           </div>
-          <div className="space-y-5">
+          <div className="flex-1 flex flex-col justify-center space-y-8">
             {/* By Type */}
             <div>
               <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">By Type</p>
@@ -327,15 +327,16 @@ const Dashboard = () => {
         </Card>
 
         {/* Top Sold Items */}
-        <Card className="p-6">
-          <div className="flex items-center justify-between mb-3">
+        <Card className="p-6 flex flex-col h-full">
+          <div className="flex items-center justify-between mb-3 shrink-0">
             <div>
               <h2 className="text-base font-bold text-slate-800">Top Sold Items</h2>
               <p className="text-xs text-slate-400 mt-0.5">By revenue generated</p>
             </div>
           </div>
-          {sales.topItems?.length > 0 ? (
-            <div className="space-y-3">
+          <div className="flex-1 flex flex-col justify-center">
+            {sales.topItems?.length > 0 ? (
+              <div className="space-y-4">
               {sales.topItems.slice(0, 8).map((item, i) => {
                 const pct = Math.min((item.totalRevenue / (sales.topItems[0]?.totalRevenue || 1)) * 100, 100);
                 return (
@@ -353,10 +354,11 @@ const Dashboard = () => {
                   </div>
                 );
               })}
-            </div>
-          ) : (
-            <p className="text-sm text-slate-300 text-center py-8">No item data yet</p>
-          )}
+              </div>
+            ) : (
+              <p className="text-sm text-slate-300 text-center py-8">No item data yet</p>
+            )}
+          </div>
         </Card>
       </div>
 
