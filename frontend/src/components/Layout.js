@@ -84,20 +84,20 @@ const Layout = ({ children }) => {
   const SidebarContent = () => (
     <>
       {/* Logo & Brand */}
-      <div className="p-5 border-b border-slate-700">
+      <div className="p-5 border-b border-slate-200">
         <div className="flex items-center gap-3">
           <img src="/lmh.png" alt="LMH Trading" className="w-11 h-11 object-contain rounded" />
           <div className="min-w-0">
-            <h1 className="text-lg font-bold font-heading uppercase tracking-tight text-white leading-tight truncate">
+            <h1 className="text-lg font-bold font-heading uppercase tracking-tight text-slate-900 leading-tight truncate">
               LMH Trading
             </h1>
-            <p className="text-[10px] text-slate-400 truncate">FZCO - Container Trade</p>
+            <p className="text-[10px] text-slate-500 truncate">FZCO - Container Trade</p>
           </div>
         </div>
         {user && (
           <div className="mt-2">
-            <p className="text-[10px] text-slate-500 truncate">{user.name || user.email}</p>
-            <span className="text-[9px] px-1.5 py-0.5 rounded bg-slate-700 text-slate-300 uppercase tracking-wider font-medium">
+            <p className="text-[10px] text-slate-600 truncate">{user.name || user.email}</p>
+            <span className="text-[9px] px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 uppercase tracking-wider font-medium">
               {user.role}
             </span>
           </div>
@@ -115,7 +115,7 @@ const Layout = ({ children }) => {
                 `flex items-center gap-3 px-4 py-2.5 rounded-sm transition-all text-sm ${
                   isActive
                     ? 'bg-primary text-white shadow-sm'
-                    : 'text-slate-300 hover:bg-slate-700 hover:text-white'
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                 }`
               }
             >
@@ -125,7 +125,7 @@ const Layout = ({ children }) => {
           ))}
         </div>
 
-        <div className="mt-6 pt-4 border-t border-slate-700">
+        <div className="mt-6 pt-4 border-t border-slate-200">
           <NavLink
             to="/containers/new"
             className="flex items-center gap-3 px-4 py-2.5 rounded-sm bg-accent text-accent-foreground hover:bg-accent/90 font-bold uppercase tracking-wide transition-all text-sm"
@@ -137,10 +137,10 @@ const Layout = ({ children }) => {
       </nav>
 
       {/* Logout */}
-      <div className="p-3 border-t border-slate-700">
+      <div className="p-3 border-t border-slate-200">
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 px-4 py-2.5 rounded-sm text-slate-300 hover:bg-slate-700 hover:text-white w-full transition-all text-sm"
+          className="flex items-center gap-3 px-4 py-2.5 rounded-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 w-full transition-all text-sm"
         >
           <LogOut size={18} />
           <span>Logout</span>
@@ -152,17 +152,17 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Mobile Top Bar */}
-      <header className="lg:hidden bg-secondary text-white flex items-center justify-between px-4 py-3 sticky top-0 z-40">
+      <header className="lg:hidden bg-secondary text-slate-900 flex items-center justify-between px-4 py-3 sticky top-0 z-40 border-b border-slate-200">
         <div className="flex items-center gap-3">
           <img src="/lmh.png" alt="LMH Trading" className="w-9 h-9 object-contain rounded" />
           <div>
             <h1 className="text-sm font-bold font-heading uppercase tracking-tight leading-tight">LMH Trading</h1>
-            <p className="text-[9px] text-slate-400">FZCO</p>
+            <p className="text-[9px] text-slate-500">FZCO</p>
           </div>
         </div>
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="p-2 text-slate-300 hover:text-white hover:bg-slate-700 rounded-sm transition-colors"
+          className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-sm transition-colors"
           aria-label="Toggle menu"
         >
           {sidebarOpen ? <X size={22} /> : <Menu size={22} />}

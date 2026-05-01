@@ -13,24 +13,29 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#FF4F00',
+          DEFAULT: '#1D4ED8', // blue-700
           foreground: '#FFFFFF',
-          hover: '#CC3F00',
+          hover: '#1E40AF', // blue-800
         },
         secondary: {
-          DEFAULT: '#0F172A',
-          foreground: '#F8FAFC',
+          DEFAULT: '#F8FAFC', // slate-50
+          foreground: '#0F172A', // slate-900
         },
         accent: {
-          DEFAULT: '#F59E0B',
+          DEFAULT: '#38BDF8', // sky-400
           foreground: '#0F172A',
         },
-        background: '#F1F5F9',
+        background: '#FFFFFF',
         surface: '#FFFFFF',
         border: '#E2E8F0',
       },
       borderRadius: {
-        sm: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        '2xl': '24px',
+        '3xl': '32px',
       },
     },
   },

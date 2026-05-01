@@ -14,6 +14,7 @@ const Reports = lazy(() => import('./pages/Reports'));
 const AdminEmployees = lazy(() => import('./pages/AdminEmployees'));
 const Settings = lazy(() => import('./pages/Settings'));
 const ResetPassword = lazy(() => import('./pages/ResetPassword'));
+const LandingPage = lazy(() => import('./pages/LandingPage'));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -68,6 +69,7 @@ function App() {
       <Router>
         <Toaster position="top-right" richColors />
         <Routes>
+          <Route path="/" element={<Suspense fallback={<PageFallback />}><LandingPage /></Suspense>} />
           <Route path="/login" element={token ? <Navigate to={user?.mustResetPassword ? '/reset-password' : defaultRoute} replace /> : <Login />} />
           <Route
             path="/reset-password"
@@ -113,7 +115,7 @@ function App() {
                         </RoleRoute>
                       } />
                       <Route path="/settings" element={<Settings />} />
-                      <Route path="/" element={<Navigate to={defaultRoute} replace />} />
+                      <Route path="*" element={<Navigate to={defaultRoute} replace />} />
                     </Routes>
                   </Suspense>
                 </Layout>
