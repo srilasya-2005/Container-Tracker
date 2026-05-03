@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { LayoutDashboard, Package, DollarSign, BarChart3, LogOut, Plus, ShoppingCart, Menu, X, Users, Settings } from 'lucide-react';
+import { LayoutDashboard, Package, DollarSign, BarChart3, LogOut, Plus, ShoppingCart, Menu, X, Users, Settings, CreditCard } from 'lucide-react';
 import { toast } from 'sonner';
 import { notificationAPI } from '../utils/api';
 
@@ -76,6 +76,7 @@ const Layout = ({ children }) => {
     { path: '/sales', icon: DollarSign, label: 'Sales', roles: ['admin', 'finance', 'ops'] },
     { path: '/reports', icon: BarChart3, label: 'Reports', roles: ['admin', 'finance'] },
     { path: '/admin/employees', icon: Users, label: 'Employees', roles: ['admin'] },
+    { path: '/payments', icon: CreditCard, label: 'Payments', roles: ['admin', 'finance'] },
     { path: '/settings', icon: Settings, label: 'Settings', roles: ['admin', 'finance', 'ops', 'employee'] }
   ];
 
