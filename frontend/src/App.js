@@ -15,7 +15,6 @@ const AdminEmployees = lazy(() => import('./pages/AdminEmployees'));
 const Settings = lazy(() => import('./pages/Settings'));
 const ResetPassword = lazy(() => import('./pages/ResetPassword'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
-const Payments = lazy(() => import('./pages/Payments'));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -113,11 +112,6 @@ function App() {
                       <Route path="/admin/employees" element={
                         <RoleRoute allowedRoles={['admin']}>
                           <AdminEmployees />
-                        </RoleRoute>
-                      } />
-                      <Route path="/payments" element={
-                        <RoleRoute allowedRoles={['admin', 'finance']}>
-                          <Payments />
                         </RoleRoute>
                       } />
                       <Route path="/settings" element={<Settings />} />
