@@ -37,6 +37,15 @@ module.exports = {
         '2xl': '24px',
         '3xl': '32px',
       },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -53,11 +53,11 @@ const Dashboard = () => {
   const margin = sales.totalRevenue > 0 ? ((profit / sales.totalRevenue) * 100).toFixed(1) : 0;
 
   const kpis = [
-    { title: 'Total Containers', value: containers.total, subtitle: `${containers.available} available`, icon: Package, iconBg: 'bg-blue-50', iconColor: 'text-blue-600', trend: '+5%', trendUp: true, accent: 'bg-blue-500' },
-    { title: 'Total Sales', value: sales.totalCount, subtitle: `${sales.paymentBreakdown.find(p => p.name === 'Full')?.value || 0} fully paid`, icon: ShoppingCart, iconBg: 'bg-violet-50', iconColor: 'text-violet-600', trend: '+12%', trendUp: true, accent: 'bg-violet-500' },
+    { title: 'Total Containers', value: containers.total, subtitle: `${containers.available} available`, icon: Package, iconBg: 'bg-slate-50', iconColor: 'text-slate-600', trend: '+5%', trendUp: true, accent: 'bg-slate-500' },
+    { title: 'Total Sales', value: sales.totalCount, subtitle: `${sales.paymentBreakdown.find(p => p.name === 'Full')?.value || 0} fully paid`, icon: ShoppingCart, iconBg: 'bg-indigo-50', iconColor: 'text-indigo-600', trend: '+12%', trendUp: true, accent: 'bg-indigo-500' },
     { title: 'Total Revenue', value: formatAED(sales.totalRevenue), subtitle: `${sales.totalCount} transactions`, icon: TrendingUp, iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600', trend: '+8%', trendUp: true, accent: 'bg-emerald-500' },
-    ...(showProfit ? [{ title: 'Total Profit', value: formatAED(profit), subtitle: `${margin}% margin`, icon: ArrowUpRight, iconBg: profit >= 0 ? 'bg-orange-50' : 'bg-red-50', iconColor: profit >= 0 ? 'text-orange-600' : 'text-red-600', trend: profit >= 0 ? '+14%' : '-3%', trendUp: profit >= 0, accent: profit >= 0 ? 'bg-orange-500' : 'bg-red-500' }] : []),
-    { title: 'Inventory Value', value: formatAED(containers.inventoryValue), subtitle: `${containers.available + containers.reserved} in stock`, icon: Wallet, iconBg: 'bg-cyan-50', iconColor: 'text-cyan-600', trend: '+3%', trendUp: true, accent: 'bg-cyan-500' },
+    ...(showProfit ? [{ title: 'Total Profit', value: formatAED(profit), subtitle: `${margin}% margin`, icon: ArrowUpRight, iconBg: profit >= 0 ? 'bg-emerald-50' : 'bg-rose-50', iconColor: profit >= 0 ? 'text-emerald-600' : 'text-rose-600', trend: profit >= 0 ? '+14%' : '-3%', trendUp: profit >= 0, accent: profit >= 0 ? 'bg-emerald-500' : 'bg-rose-500' }] : []),
+    { title: 'Inventory Value', value: formatAED(containers.inventoryValue), subtitle: `${containers.available + containers.reserved} in stock`, icon: Wallet, iconBg: 'bg-blue-50', iconColor: 'text-blue-600', trend: '+3%', trendUp: true, accent: 'bg-blue-500' },
     { title: 'Outstanding', value: formatAED(sales.totalOutstanding), subtitle: 'pending collection', icon: AlertCircle, iconBg: 'bg-amber-50', iconColor: 'text-amber-600', trend: sales.totalOutstanding > 0 ? 'Due' : 'Clear', trendUp: sales.totalOutstanding === 0, accent: 'bg-amber-500' },
   ];
 
@@ -126,15 +126,15 @@ const Dashboard = () => {
       {/* ── Action Buttons ── */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { label: 'Add Container', sub: 'Register purchase', icon: Plus, color: 'from-blue-500 to-blue-600', path: '/containers/new' },
-          { label: 'Sell Container', sub: 'Create transaction', icon: ShoppingCart, color: 'from-violet-500 to-violet-600', path: '/sell' },
-          { label: 'View Reports', sub: 'Analytics & exports', icon: BarChart3, color: 'from-emerald-500 to-teal-600', path: '/reports' },
-          { label: 'Manage Stock', sub: 'Inventory control', icon: Settings, color: 'from-amber-500 to-orange-500', path: '/containers' },
+          { label: 'Add Container', sub: 'Register purchase', icon: Plus, color: 'bg-indigo-50 text-indigo-600', path: '/containers/new' },
+          { label: 'Sell Container', sub: 'Create transaction', icon: ShoppingCart, color: 'bg-blue-50 text-blue-600', path: '/sell' },
+          { label: 'View Reports', sub: 'Analytics & exports', icon: BarChart3, color: 'bg-emerald-50 text-emerald-600', path: '/reports' },
+          { label: 'Manage Stock', sub: 'Inventory control', icon: Settings, color: 'bg-slate-50 text-slate-600', path: '/containers' },
         ].map(btn => (
           <button key={btn.label} onClick={() => navigate(btn.path)}
             className="group flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-left">
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${btn.color} flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-200`}>
-              <btn.icon size={18} className="text-white" />
+            <div className={`w-10 h-10 rounded-xl ${btn.color} flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-200`}>
+              <btn.icon size={18} />
             </div>
             <div className="min-w-0">
               <p className="text-sm font-bold text-slate-800 truncate">{btn.label}</p>
@@ -164,8 +164,8 @@ const Dashboard = () => {
               <AreaChart data={trendData} margin={{ top: 5, right: 5, left: 0, bottom: 0 }}>
                 <defs>
                   <linearGradient id="gRev" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.15} />
-                    <stop offset="100%" stopColor="#3B82F6" stopOpacity={0} />
+                    <stop offset="0%" stopColor="#4F46E5" stopOpacity={0.15} />
+                    <stop offset="100%" stopColor="#4F46E5" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="gProfit" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#10B981" stopOpacity={0.15} />
@@ -176,7 +176,7 @@ const Dashboard = () => {
                 <XAxis dataKey="label" tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} tickFormatter={formatAED} width={70} />
                 <Tooltip content={<ChartTooltip />} />
-                <Area type="monotone" dataKey="revenue" name="Revenue" stroke="#3B82F6" strokeWidth={2.5} fill="url(#gRev)" dot={false} activeDot={{ r: 5, fill: '#3B82F6' }} />
+                <Area type="monotone" dataKey="revenue" name="Revenue" stroke="#4F46E5" strokeWidth={2.5} fill="url(#gRev)" dot={false} activeDot={{ r: 5, fill: '#4F46E5' }} />
                 {showProfit && <Area type="monotone" dataKey="profit" name="Profit" stroke="#10B981" strokeWidth={2.5} fill="url(#gProfit)" dot={false} activeDot={{ r: 5, fill: '#10B981' }} />}
               </AreaChart>
             </ResponsiveContainer>
@@ -302,7 +302,7 @@ const Dashboard = () => {
                     <XAxis type="number" tick={{ fontSize: 10, fill: '#94A3B8' }} axisLine={false} tickLine={false} allowDecimals={false} />
                     <YAxis dataKey="name" type="category" tick={{ fontSize: 11, fill: '#64748B', fontWeight: 500 }} axisLine={false} tickLine={false} width={50} />
                     <Tooltip cursor={{ fill: '#F8FAFC' }} formatter={(v) => [v, 'Containers']} />
-                    <Bar dataKey="value" fill="#3B82F6" radius={[0, 6, 6, 0]} />
+                    <Bar dataKey="value" fill="#4F46E5" radius={[0, 6, 6, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               ) : <p className="text-xs text-slate-300">No data</p>}
@@ -318,7 +318,7 @@ const Dashboard = () => {
                     <XAxis type="number" tick={{ fontSize: 10, fill: '#94A3B8' }} axisLine={false} tickLine={false} allowDecimals={false} />
                     <YAxis dataKey="name" type="category" tick={{ fontSize: 11, fill: '#64748B', fontWeight: 500 }} axisLine={false} tickLine={false} width={50} />
                     <Tooltip cursor={{ fill: '#F8FAFC' }} formatter={(v) => [v, 'Containers']} />
-                    <Bar dataKey="value" fill="#8B5CF6" radius={[0, 6, 6, 0]} />
+                    <Bar dataKey="value" fill="#64748B" radius={[0, 6, 6, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               ) : <p className="text-xs text-slate-300">No data</p>}
@@ -388,7 +388,7 @@ const Dashboard = () => {
                 <thead>
                   <tr className="border-b border-slate-100">
                     {['Container', 'Buyer', 'Items', 'Revenue', ...(showProfit ? ['Profit'] : []), 'Date', 'Payment'].map(h => (
-                      <th key={h} className="px-3 py-3 text-left text-[10px] font-bold text-cyan-500 uppercase tracking-widest whitespace-nowrap">{h}</th>
+                      <th key={h} className="px-3 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest whitespace-nowrap">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -405,9 +405,9 @@ const Dashboard = () => {
                         <td className="px-3 py-3.5">
                           <span className="font-mono text-[13px] font-bold text-slate-800">{s.containerId?.containerNo || '—'}</span>
                         </td>
-                        <td className="px-3 py-3.5 text-[13px] text-cyan-600 whitespace-nowrap">{s.buyerName}</td>
+                        <td className="px-3 py-3.5 text-[13px] text-slate-600 whitespace-nowrap">{s.buyerName}</td>
                         <td className="px-3 py-3.5 max-w-[130px]">
-                          <span className="text-[13px] text-cyan-600 line-clamp-1 block truncate">{itemsText}</span>
+                          <span className="text-[13px] text-slate-600 line-clamp-1 block truncate">{itemsText}</span>
                         </td>
                         <td className="px-3 py-3.5 text-[13px] font-bold text-slate-900 whitespace-nowrap">AED {s.sellingPrice?.toLocaleString()}</td>
                         {showProfit && (
@@ -441,11 +441,11 @@ const Dashboard = () => {
             <div className="space-y-3">
               {sales.topBuyers.slice(0, 5).map((b, i) => {
                 const rankColors = [
-                  'from-amber-400 to-yellow-500',
+                  'from-slate-800 to-slate-900',
+                  'from-slate-700 to-slate-800',
+                  'from-slate-600 to-slate-700',
+                  'from-slate-500 to-slate-600',
                   'from-slate-400 to-slate-500',
-                  'from-orange-300 to-orange-400',
-                  'from-blue-300 to-blue-400',
-                  'from-violet-300 to-violet-400',
                 ];
                 const pct = Math.min((b.revenue / (sales.topBuyers[0]?.revenue || 1)) * 100, 100);
                 return (

@@ -128,7 +128,7 @@ const Layout = ({ children }) => {
         <div className="mt-6 pt-4 border-t border-slate-200">
           <NavLink
             to="/containers/new"
-            className="flex items-center gap-3 px-4 py-2.5 rounded-sm bg-accent text-accent-foreground hover:bg-accent/90 font-bold uppercase tracking-wide transition-all text-sm"
+            className="flex items-center gap-3 px-4 py-2.5 rounded-sm bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm font-bold uppercase tracking-wide transition-all text-sm"
           >
             <Plus size={18} />
             <span>Add Container</span>
